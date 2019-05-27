@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "address": "localhost",
+            "port": 5861,
+            "timeout": 10000,
+            "name": "WebdriverIO",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
+            // "env": {
+            //     "BROWSER": "chrome"
+            // },
+            "runtimeArgs": ["${workspaceRoot}/configs/wdio.local.debug.conf.js"],
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            // This args config runs only the file that's open and displayed
+            // (e.g., a file in test/spec/):
+            "args": [
+                "--suite", "smoke",
+                // "--spec", "${workspaceRoot}/test/Omniture/BrandPage/BrandPage.spec.js",
+                "--mochaOpts.grep", "@local",
+                "--mochaOpts.retries", "0" //) retries for local run
+                // To run a specific file, you can use:
+            ]
+        }
+    ]
+}

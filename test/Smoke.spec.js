@@ -1,4 +1,5 @@
 import assert from 'assert';
+import waitForPageToLoad from './StrategySample';
 // const assert = require('assert');
 suite('Sample', () => {
 
@@ -6,6 +7,7 @@ suite('Sample', () => {
       browser.url("/cl");
       console.log( browser.desiredCapabilities.platform);
       console.log('Test passed');
+      waitForPageToLoad();
       // assert.fail();
     });
 
