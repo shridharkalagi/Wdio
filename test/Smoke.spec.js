@@ -2,9 +2,11 @@ import assert from 'assert';
 // const assert = require('assert');
 suite('Sample', () => {
 
-    test('Smaple Test -', () => {
+    test('@local Smaple Test -', () => {
       browser.url("/cl");
-       console.log('Test passed');
+      console.log( browser.desiredCapabilities.platform);
+      console.log('Test passed');
+      // assert.fail();
     });
 
   test('@Manual Scenario - Sample Failure', () => {
