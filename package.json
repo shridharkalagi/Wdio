@@ -26,5 +26,17 @@
     "uitest:local": "BROWSER=chrome wdio ./configs/wdio.local.conf.js --suite=smoke",
     "uitest:bs": "BROWSER=chrome ENV=test wdio ./configs/wdio.conf.js --suite=smoke",
     "buildreport": "marge ./Results/wdiomochawesome.json && cp -r ./Results/screenshots ./mochawesome-report"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
   }
 }
