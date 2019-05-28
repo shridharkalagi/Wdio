@@ -1,8 +1,7 @@
 const defaultConfig = require('./wdio.conf.js');
 const baseURL = 'https://www.google.com';
 const utils = require('./utils');
-
-
+import SetContext from '../test/StrategySample';
 const overriddenConfig = {
   baseUrl: baseURL,
   host: 'localhost',
@@ -50,6 +49,14 @@ const overriddenConfig = {
   },
   onComplete: () => {
     // do nothing, override Browserstack config in default conf
+  },
+  before: function () {
+    // assert = require('chai').assert;
+    // browserDetails();
+    console.log('contextasdasfdae');
+    const context = new SetContext(browser.desiredCapabilities.platform);
+    global.currentContext = context;
+    console.log('context', global.currentContext);
   },
 };
 

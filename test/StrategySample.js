@@ -1,53 +1,18 @@
 'use strict';
-
+import WebFlow from './Flows/WebFlow';
+import MobileFlow from './Flows/MobileFlow';
 class SetContext {
     constructor(type) {
         switch (type) {
             case "desktop":
-                this.strategy = new WebFlow();
-                break
+                return new WebFlow();
+                
             case "mobile":
-                this.strategy = new MobileFlow();
-                break
+                return new MobileFlow();
+                
             default:
-                this.strategy = new WebFlow();
+                return new WebFlow();
         }
     }
-
-    waitForGenericPage() {
-        this.strategy.waitForPageToLoad()
-    }
 }
-
-class Strategy {
-    constructor() {
-    }
-}
-
-class MobileFlow extends Strategy {
-    constructor() {
-        super()
-        console.log('Mobile Flow created')
-    }
-
-    waitForPageToLoad() {
-        console.log('Wait fir Mobile Page')
-    }
-}
-
-class WebFlow extends Strategy {
-    constructor() {
-        super()
-        console.log('WebFlow created')
-    }
-
-    waitForPageToLoad() {
-        console.log('Wait fir Web Page')
-    }
-}
-
-function init_Strategy() {
-    let context = new SetContext(browser.desiredCapabilities.platform)
-    context.waitForGenericPage()
-}
-export default init_Strategy;
+export default SetContext;

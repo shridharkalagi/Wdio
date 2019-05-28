@@ -101,6 +101,10 @@ exports.config = {
     before: function () {
         // assert = require('chai').assert;
         // browserDetails();
+        SetContext = require ('./StrategySample');
+        const context = new SetContext(browser.desiredCapabilities.platform);
+        global.currentContext = context;
+        console.log('aaaa as dasdasd context', global.currentContext);
     },
 
     // Runs after a WebdriverIO command gets executed
