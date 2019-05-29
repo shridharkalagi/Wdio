@@ -1,5 +1,6 @@
 const browsers = require('./browserstack.caps');
 const browserstack = require('browserstack-local');
+import SetContext from '../test/StrategySample';
 const utils = require('./utils');
 exports.config = {
     baseUrl: 'https://www-test.com',
@@ -74,8 +75,7 @@ exports.config = {
 
     // Gets executed once before all workers get launched.
     onPrepare: function () {
-      utils.createDirectory(this.reporterOptions);
-
+        utils.createDirectory(this.reporterOptions);
         console.log('Connecting to Browserstack');
         const args = {
             'user': '',
@@ -99,12 +99,9 @@ exports.config = {
     // Gets executed before Tests execution begins. At this point you can access to all global
     // variables like `browser`. It is the perfect place to define custom commands.
     before: function () {
-        // assert = require('chai').assert;
-        // browserDetails();
-        SetContext = require ('./StrategySample');
         const context = new SetContext(browser.desiredCapabilities.platform);
         global.currentContext = context;
-        console.log('aaaa as dasdasd context', global.currentContext);
+        // console.log('context', global.currentContext);
     },
 
     // Runs after a WebdriverIO command gets executed
@@ -119,6 +116,6 @@ exports.config = {
     },
 
     onComplete: function () {
-        exports.bs_local.stop(function () {})
+        exports.bs_local.stop(function () { })
     }
 };

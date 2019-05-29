@@ -1,14 +1,11 @@
 import assert from 'assert';
-import SetContext from './StrategySample';
-// const assert = require('assert');
 suite('Sample', () => {
-
     test('@local Smaple Test -', () => {
-      let context = new SetContext(browser.desiredCapabilities.platform);
+      // let context = new SetContext(browser.desiredCapabilities.platform);
       browser.url("/cl");
       console.log( browser.desiredCapabilities.platform);
       console.log('Test passed');
-      context.waitForPageToLoad();
+      global.currentContext.waitForPageToLoad();
       // assert.fail();
     });
 

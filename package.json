@@ -25,8 +25,8 @@
     "webdriverio": "^4.14.1"
   },
   "scripts": {
-    "uitest:local": "BROWSER=chrome wdio ./configs/wdio.local.conf.js --suite=smoke",
-    "uitest:bs": "BROWSER=chrome ENV=test wdio ./configs/wdio.conf.js --suite=smoke",
+    "uitest:local": "BROWSER=chrome npm run wdio -- ./configs/wdio.local.conf.js --suite=smoke",
+    "uitest:bs": "BROWSER=chrome npm run wdio -- ./configs/wdio.conf.js --suite=smoke",
     "buildreport": "marge ./Results/wdiomochawesome.json && cp -r ./Results/screenshots ./mochawesome-report",
     "wdio": "node -r @babel/register ./node_modules/.bin/wdio"
   },

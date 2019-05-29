@@ -1,7 +1,7 @@
 
 class WebFlow {
     constructor() {
-        console.log('WebFlow created')
+        console.log('Currently running on Web')
     }
 
     waitForPageToLoad() {

@@ -1,11 +1,11 @@
 
 class MobileFlow {
     constructor() {
-        console.log('Mobile Flow created')
+        console.log('Currently running on Mobile')
     }
 
     waitForPageToLoad() {
-        console.log('Wait fir Mobile Page')
+        console.log('Wait for Mobile Page')
     }
 }
 
