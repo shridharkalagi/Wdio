@@ -10,7 +10,7 @@ class LandingPage extends BasePage{
 
     waitForPageToLoad(){
         $(LandingPageObjects.searchBox).waitForDisplayed( 10000, false, 'Search bar not displayed');
-        currentContext.waitForPageToLoad();//Set globally
+        currentContext.waitForPageToLoad();//Set globally and has different implementation for Web and Mobile
     }
     clickContactUs(){
         $(LandingPageObjects.contactUs).click();

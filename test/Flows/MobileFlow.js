@@ -5,7 +5,8 @@ class MobileFlow {
     }
 
     waitForPageToLoad() {
-        console.log('Wait for Mobile Page')
+        console.log('Wait for Mobile Page') 
+        //Write different implementation in web and mobile if needed
     }
 }
 
