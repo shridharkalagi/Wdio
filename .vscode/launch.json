@@ -20,7 +20,7 @@
             // This args config runs only the file that's open and displayed
             // (e.g., a file in test/spec/):
             "args": [
-                "--suite", "smoke",
+                "--spec", "test/Smoke.spec.js",
                 // "--spec", "${workspaceRoot}/test/Omniture/BrandPage/BrandPage.spec.js",
                 "--mochaOpts.grep", "@local",
                 "--mochaOpts.retries", "0" //) retries for local run

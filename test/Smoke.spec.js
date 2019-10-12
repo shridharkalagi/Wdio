@@ -1,20 +1,9 @@
 import assert from 'assert';
-suite('Sample', () => {
-    test('@local Smaple Test -', () => {
-      // let context = new SetContext(browser.desiredCapabilities.platform);
-      browser.url("/cl");
-      console.log( browser.desiredCapabilities.platform);
-      console.log('Test passed');
-      global.currentContext.waitForPageToLoad();
-      // assert.fail();
-    });
+import LandingPage from './pages/LandingPage';
 
-  test('@Manual Scenario - Sample Failure', () => {
-    // assert.fail();
+suite('Validate the contact us page', () => {
+  test('@local Smaple Test -', () => {
+    const heading = new LandingPage().clickContactUs().getHeading();
+    assert('Customer service - Contact us', heading, 'Test failed');
   });
-
-  test('@Manual Scenario - Sample Pass', () => {
-    // assert.fail();
-  });
-
 });
